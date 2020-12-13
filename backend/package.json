@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./src/server.ts",
   "scripts": {
     "build": "rimraf ./build && tsc",
     "dev": "ts-node-dev --transpile-only --inspect --ignore-watch node_modules src/server.ts",
