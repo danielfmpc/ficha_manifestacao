@@ -6,34 +6,25 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('tipos')
-class Tipos {
-  @PrimaryGeneratedColumn('uuid')
+@Entity('fichas')
+class Ficha {
+  @PrimaryGeneratedColumn()
   id: string;
 
   @Column()
-  tipo: string;
+  comentario: string;
 
   @Column()
-  cep: string;
+  sigilo: boolean;
 
   @Column()
-  endereco: string;
+  numero: string;
 
   @Column()
-  uf: string;
+  unidade_id: string;
 
   @Column()
-  cidade: string;
-
-  @Column()
-  bairro: string;
-
-  @Column()
-  numero: number;
-
-  @Column()
-  complemento: string;
+  orgao_id: string;
 
   @CreateDateColumn()
   created_at: Date;
@@ -41,4 +32,5 @@ class Tipos {
   @UpdateDateColumn()
   updated_at: Date;
 }
-export default Tipos;
+
+export default Ficha;

@@ -6,13 +6,13 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('tipos')
-class Tipos {
+@Entity('orgaos')
+class Orgao {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  tipo: string;
+  orgao: string;
 
   @CreateDateColumn()
   created_at: Date;
@@ -20,4 +20,4 @@ class Tipos {
   @UpdateDateColumn()
   updated_at: Date;
 }
-export default Tipos;
+export default Orgao;
