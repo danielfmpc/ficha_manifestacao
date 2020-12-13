@@ -33,12 +33,17 @@ export default class CreateEnderecos1607714539735
             isNullable: true,
           },
           {
-            name: 'endereco',
+            name: 'bairro',
             type: 'varchar',
             isNullable: true,
           },
           {
-            name: 'endereco',
+            name: 'numero',
+            type: 'int',
+            isNullable: true,
+          },
+          {
+            name: 'complemento',
             type: 'varchar',
             isNullable: true,
           },
