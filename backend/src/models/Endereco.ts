@@ -6,13 +6,10 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('tipos')
+@Entity('enderecos')
 class Endereco {
   @PrimaryGeneratedColumn('uuid')
   id: string;
-
-  @Column()
-  tipo: string;
 
   @Column()
   cep: string;

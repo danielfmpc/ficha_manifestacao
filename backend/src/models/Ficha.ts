@@ -18,9 +18,6 @@ class Ficha {
   sigilo: boolean;
 
   @Column()
-  numero: string;
-
-  @Column()
   unidade_id: string;
 
   @Column()
