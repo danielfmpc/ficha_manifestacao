@@ -6,11 +6,11 @@
 
 <strong> Tecnologias utilizadas: </strong>
 
-`NodeJs`</br>
-`Typescript`</br>
-`Typeorm`</br>
-`Express`</br>
-`Cors`</br>
+`NodeJs`
+`Typescript`
+`Typeorm`
+`Express`
+`Cors`
 
 ## INICIAR PROJETO MODO DEV
 
