@@ -27,10 +27,22 @@ export default class CreateFicha1607877850636 implements MigrationInterface {
           {
             name: 'unidade_id',
             type: 'varchar',
-            isNullable: true,
           },
           {
             name: 'orgao_id',
+            type: 'varchar',
+          },
+          {
+            name: 'tipo_id',
+            type: 'varchar',
+          },
+          {
+            name: 'contato_id',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
+            name: 'endereco_id',
             type: 'varchar',
             isNullable: true,
           },
@@ -65,9 +77,39 @@ export default class CreateFicha1607877850636 implements MigrationInterface {
         referencedTableName: 'orgaos',
       }),
     );
+    await queryRunner.createForeignKey(
+      'fichas',
+      new TableForeignKey({
+        name: 'FK_FICHAS_TIPOS',
+        columnNames: ['tipo_id'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'tipos',
+      }),
+    );
+    await queryRunner.createForeignKey(
+      'fichas',
+      new TableForeignKey({
+        name: 'FK_FICHAS_CONTATOS',
+        columnNames: ['contato_id'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'contatos',
+      }),
+    );
+    await queryRunner.createForeignKey(
+      'fichas',
+      new TableForeignKey({
+        name: 'FK_FICHAS_ENDERECOS',
+        columnNames: ['endereco_id'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'enderecos',
+      }),
+    );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_ENDERECOS');
+    await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_TIPOS');
+    await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_CONTATOS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_ORGAOS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_UNIDADES');
     await queryRunner.dropTable('fichas');
