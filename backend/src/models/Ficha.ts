@@ -8,7 +8,7 @@ import {
 
 @Entity('fichas')
 class Ficha {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
@@ -22,6 +22,15 @@ class Ficha {
 
   @Column()
   orgao_id: string;
+
+  @Column()
+  tipo_id: string;
+
+  @Column()
+  contato_id: string;
+
+  @Column()
+  endereco_id: string;
 
   @CreateDateColumn()
   created_at: Date;
