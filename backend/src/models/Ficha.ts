@@ -12,10 +12,31 @@ class Ficha {
   id: string;
 
   @Column()
-  comentario: string;
+  nome: string;
+
+  @Column()
+  email: string;
+
+  @Column()
+  telefone: string;
+
+  @Column()
+  celular: string;
 
   @Column()
   sigilo: boolean;
+
+  @Column()
+  comentario: string;
+
+  @Column()
+  cep: string;
+
+  @Column()
+  numero: string;
+
+  @Column()
+  complemento: string;
 
   @Column()
   unidade_id: string;
@@ -27,10 +48,14 @@ class Ficha {
   tipo_id: string;
 
   @Column()
+<<<<<<< HEAD
   contato_id: string;
 
   @Column()
   endereco_id: string;
+=======
+  midia_id: string;
+>>>>>>> 12970724fdad52b52c1358a75a74ffaac81fd6d6
 
   @CreateDateColumn()
   created_at: Date;

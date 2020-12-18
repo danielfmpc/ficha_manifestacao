@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class CreateOrgao1607772138844 implements MigrationInterface {
+export default class CreateMidias1607772138844 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'orgaos',
+        name: 'midias',
         columns: [
           {
             name: 'id',
@@ -12,7 +12,7 @@ export default class CreateOrgao1607772138844 implements MigrationInterface {
             isPrimary: true,
           },
           {
-            name: 'orgao',
+            name: 'midia',
             type: 'varchar',
           },
           {

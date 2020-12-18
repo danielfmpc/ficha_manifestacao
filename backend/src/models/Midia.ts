@@ -6,19 +6,13 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('contatos')
-class Contato {
+@Entity('midias')
+class Midia {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  email: string;
-
-  @Column()
-  celular: string;
-
-  @Column()
-  telefone: string;
+  midia: string;
 
   @CreateDateColumn()
   created_at: Date;
@@ -26,5 +20,4 @@ class Contato {
   @UpdateDateColumn()
   updated_at: Date;
 }
-
-export default Contato;
+export default Midia;

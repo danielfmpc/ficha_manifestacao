@@ -5,7 +5,7 @@ import {
   TableForeignKey,
 } from 'typeorm';
 
-export default class CreateFicha1607877850636 implements MigrationInterface {
+export default class CreateFichas1607877850636 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -15,6 +15,41 @@ export default class CreateFicha1607877850636 implements MigrationInterface {
             name: 'id',
             type: 'varchar',
             isPrimary: true,
+          },
+          {
+            name: 'nome',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
+            name: 'email',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
+            name: 'telefone',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
+            name: 'celular',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
+            name: 'cep',
+            type: 'varchar(9)',
+            isNullable: true,
+          },
+          {
+            name: 'numero',
+            type: 'int',
+            isNullable: true,
+          },
+          {
+            name: 'complemento',
+            type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'comentario',
@@ -43,6 +78,16 @@ export default class CreateFicha1607877850636 implements MigrationInterface {
           },
           {
             name: 'endereco_id',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
+            name: 'tipo_id',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
+            name: 'midia_id',
             type: 'varchar',
             isNullable: true,
           },
@@ -89,6 +134,7 @@ export default class CreateFicha1607877850636 implements MigrationInterface {
     await queryRunner.createForeignKey(
       'fichas',
       new TableForeignKey({
+<<<<<<< HEAD:backend/src/database/migrations/1607877850636-CreateFicha.ts
         name: 'FK_FICHAS_CONTATOS',
         columnNames: ['contato_id'],
         referencedColumnNames: ['id'],
@@ -102,6 +148,12 @@ export default class CreateFicha1607877850636 implements MigrationInterface {
         columnNames: ['endereco_id'],
         referencedColumnNames: ['id'],
         referencedTableName: 'enderecos',
+=======
+        name: 'FK_FICHAS_MIDIAS',
+        columnNames: ['midia_id'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'midias',
+>>>>>>> 12970724fdad52b52c1358a75a74ffaac81fd6d6:backend/src/database/migrations/1607877850636-CreateFichas.ts
       }),
     );
   }
@@ -111,6 +163,8 @@ export default class CreateFicha1607877850636 implements MigrationInterface {
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_TIPOS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_CONTATOS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_ORGAOS');
+    await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_TIPOS');
+    await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_MIDIAS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_UNIDADES');
     await queryRunner.dropTable('fichas');
   }

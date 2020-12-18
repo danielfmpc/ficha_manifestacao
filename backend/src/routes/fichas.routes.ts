@@ -14,6 +14,7 @@ fichasRouter.get('/', async (request, response) => {
 fichasRouter.post('/', async (request, response) => {
   try {
     const {
+<<<<<<< HEAD
       comentario,
       sigilo,
       unidade_id,
@@ -30,6 +31,36 @@ fichasRouter.post('/', async (request, response) => {
       orgao_id,
       contato_id,
       endereco_id,
+=======
+      celular,
+      cep,
+      complemento,
+      nome,
+      numero,
+      telefone,
+      email,
+      comentario,
+      sigilo,
+      midia_id,
+      orgao_id,
+      tipo_id,
+      unidade_id,
+    } = request.body;
+    const createServiceFichas = new ServiceCreateFichas();
+    const createEndereco = await createServiceFichas.execute({
+      celular,
+      cep,
+      complemento,
+      nome,
+      numero,
+      telefone,
+      email,
+      comentario,
+      sigilo,
+      unidade_id,
+      midia_id,
+      orgao_id,
+>>>>>>> 12970724fdad52b52c1358a75a74ffaac81fd6d6
       tipo_id,
     });
 
