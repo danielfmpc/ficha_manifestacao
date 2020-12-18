@@ -48,14 +48,7 @@ class Ficha {
   tipo_id: string;
 
   @Column()
-<<<<<<< HEAD
-  contato_id: string;
-
-  @Column()
-  endereco_id: string;
-=======
   midia_id: string;
->>>>>>> 12970724fdad52b52c1358a75a74ffaac81fd6d6
 
   @CreateDateColumn()
   created_at: Date;
