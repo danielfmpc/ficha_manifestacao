@@ -50,6 +50,9 @@ class Ficha {
   @Column()
   midia_id: string;
 
+  @Column()
+  preferencia_id: string;
+
   @CreateDateColumn()
   created_at: Date;
 

@@ -92,6 +92,11 @@ export default class CreateFichas1607877850636 implements MigrationInterface {
             isNullable: true,
           },
           {
+            name: 'preferencia_id',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',
@@ -140,11 +145,21 @@ export default class CreateFichas1607877850636 implements MigrationInterface {
         referencedTableName: 'midias',
       }),
     );
+    await queryRunner.createForeignKey(
+      'fichas',
+      new TableForeignKey({
+        name: 'FK_FICHAS_PREFERENCIAS',
+        columnNames: ['preferencia_id'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'preferencias',
+      }),
+    );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_TIPOS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_ORGAOS');
+    await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_PREFERENCIAS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_TIPOS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_MIDIAS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_UNIDADES');

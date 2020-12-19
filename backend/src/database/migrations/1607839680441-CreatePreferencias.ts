@@ -1,10 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class CreateUnidades1607772115024 implements MigrationInterface {
+export default class CreatePreferencias1607839680441
+  implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'unidades',
+        name: 'preferencias',
         columns: [
           {
             name: 'id',
@@ -12,11 +13,7 @@ export default class CreateUnidades1607772115024 implements MigrationInterface {
             isPrimary: true,
           },
           {
-            name: 'unidade',
-            type: 'varchar',
-          },
-          {
-            name: 'logo',
+            name: 'preferencia',
             type: 'varchar',
           },
           {
@@ -35,6 +32,6 @@ export default class CreateUnidades1607772115024 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('unidades');
+    await queryRunner.dropTable('preferencias');
   }
 }
