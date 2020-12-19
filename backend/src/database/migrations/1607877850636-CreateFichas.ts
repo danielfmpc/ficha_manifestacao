@@ -134,34 +134,16 @@ export default class CreateFichas1607877850636 implements MigrationInterface {
     await queryRunner.createForeignKey(
       'fichas',
       new TableForeignKey({
-<<<<<<< HEAD:backend/src/database/migrations/1607877850636-CreateFicha.ts
-        name: 'FK_FICHAS_CONTATOS',
-        columnNames: ['contato_id'],
-        referencedColumnNames: ['id'],
-        referencedTableName: 'contatos',
-      }),
-    );
-    await queryRunner.createForeignKey(
-      'fichas',
-      new TableForeignKey({
-        name: 'FK_FICHAS_ENDERECOS',
-        columnNames: ['endereco_id'],
-        referencedColumnNames: ['id'],
-        referencedTableName: 'enderecos',
-=======
         name: 'FK_FICHAS_MIDIAS',
         columnNames: ['midia_id'],
         referencedColumnNames: ['id'],
         referencedTableName: 'midias',
->>>>>>> 12970724fdad52b52c1358a75a74ffaac81fd6d6:backend/src/database/migrations/1607877850636-CreateFichas.ts
       }),
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_ENDERECOS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_TIPOS');
-    await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_CONTATOS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_ORGAOS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_TIPOS');
     await queryRunner.dropForeignKey('fichas', 'FK_FICHAS_MIDIAS');
