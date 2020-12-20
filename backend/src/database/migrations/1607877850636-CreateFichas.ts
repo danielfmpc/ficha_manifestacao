@@ -82,11 +82,6 @@ export default class CreateFichas1607877850636 implements MigrationInterface {
             isNullable: true,
           },
           {
-            name: 'tipo_id',
-            type: 'varchar',
-            isNullable: true,
-          },
-          {
             name: 'midia_id',
             type: 'varchar',
             isNullable: true,
