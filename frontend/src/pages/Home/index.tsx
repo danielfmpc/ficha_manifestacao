@@ -2,6 +2,8 @@ import React, { useCallback, useRef } from 'react';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { FormHandles, Scope } from '@unform/core';
+// import { FiLogIn } from 'react-icons/fi';
+import logo from '../../assets/images/logo.svg';
 import Input from '../../components/Form/Input';
 import getValidationErros from '../../utils/getValidationErros';
 import { Container, Content, Background } from './styles';
@@ -36,13 +38,23 @@ const Home: React.FC = () => {
 
   return (
     <Container>
-      <Background />
       <Content>
+        <img src={logo} alt="GoBarber" />
         <h1>Formulario</h1>
         <Form ref={formRef} onSubmit={handleSubmit}>
           <Input name="name" placeholder="Nome Completo" />
-          <Input type="email" name="email" placeholder="E-mail" />
-          <Input type="password" name="password" placeholder="Sua senha" />
+          <Input
+            type="email"
+            autoComplete="username"
+            name="email"
+            placeholder="E-mail"
+          />
+          <Input
+            type="password"
+            autoComplete="current-password"
+            name="password"
+            placeholder="Sua senha"
+          />
           <Scope path="address">
             <Input name="street" placeholder="Rua" />
             <Input name="number" placeholder="Número" />
@@ -51,6 +63,7 @@ const Home: React.FC = () => {
           <button type="submit">Enviar</button>
         </Form>
       </Content>
+      <Background />
     </Container>
   );
 };
