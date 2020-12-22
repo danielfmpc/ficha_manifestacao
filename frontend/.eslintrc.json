@@ -42,6 +42,7 @@
         }
       ],
       "no-use-before-define": "off",
+      "no-unsed-expressions": "off",
       "@typescript-eslint/explicit-function-return-type": "off"
 
     },
